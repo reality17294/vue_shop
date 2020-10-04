@@ -90,7 +90,7 @@
                                 duration: 3000
                             });
                             // alert('用户名或密码不正确，请重新输入')
-                            this.$refs.loginForm.resetFields()
+                            // this.$refs.loginForm.resetFields()
                         } else {
                             const token = res.data.data.token
                             window.sessionStorage.setItem("token", token)

@@ -12,9 +12,7 @@
     export default {
         name: "",
         components: {},
-        created() {
-            console.log(this);
-        }
+
     };
 </script>
 
