@@ -7,7 +7,8 @@ export default function request(option) {
         baseURL: 'http://127.0.0.1:8888/api/private/v1/',
         timeout: 60000,
         url: option.url,
-        method: option.method
+        method: option.method || 'get',
+        params: option.params || ''
     })
     instance.interceptors.request.use(config => {
         config.headers.Authorization = window.sessionStorage.getItem("token")

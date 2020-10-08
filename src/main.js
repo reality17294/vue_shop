@@ -5,13 +5,15 @@ import store from './store'
 
 import ElementUI from 'element-ui';
 import {
-  Message
+  Message,
+  MessageBox
 } from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 
 Vue.use(ElementUI);
 
 Vue.prototype.$message = Message
+Vue.prototype.$confirm = MessageBox.confirm
 
 Vue.config.productionTip = false
 

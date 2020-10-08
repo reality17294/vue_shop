@@ -18,13 +18,15 @@
                     <div class="toggleCollapse" @click="toggleCollapse"> ||| </div>
 
                     <el-menu background-color="#545c64" text-color="#fff" active-text-color="#409efe" unique-opened
-                        :collapse="isCollapse" :collapse-transition="false" router>
+                        :collapse="isCollapse" :collapse-transition="false" router onselectstart="return false"
+                        :default-active="activePath">
                         <el-submenu :index="'/'+item.path" v-for="(item,index) in asideData" :key="index">
                             <template slot="title">
                                 <i :class="iconList[item.id]"></i>
                                 <span>{{item.authName}}</span>
                             </template>
-                            <el-menu-item v-for="(cItem,cIndex) in item.children" :key="cIndex" :index="'/'+cItem.path">
+                            <el-menu-item v-for="(cItem,cIndex) in item.children" :key="cIndex" :index="'/'+cItem.path"
+                                @click="switchActive('/'+cItem.path)">
                                 <i class="el-icon-menu"></i>
                                 <span>{{cItem.authName}}</span>
                             </el-menu-item>
@@ -64,12 +66,14 @@
                     '101': "el-icon-shopping-bag-2",
                     '102': "el-icon-shopping-cart-1",
                     '145': "el-icon-document"
-                }
+                },
+                activePath: ''
             }
         },
         created() {
             // 请求侧边栏数据
             this._getAsideData()
+            this.activePath = this.$route.path
         },
 
         methods: {
@@ -88,6 +92,9 @@
             toggleCollapse() {
                 this.isCollapse = !this.isCollapse
 
+            },
+            switchActive(activePath) {
+                this.activePath = activePath
             }
         },
     };

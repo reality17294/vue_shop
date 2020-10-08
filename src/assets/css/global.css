@@ -6,3 +6,7 @@ body,
     margin: 0;
     padding: 0;
 }
+
+.el-main {
+    line-height: 0 !important;
+}
