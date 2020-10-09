@@ -41,7 +41,6 @@
                 const res = await rightData({
                     url: "rights/" + type,
                 });
-                console.log(res);
                 if (res.data.meta.status !== 200) {
                     this.$message({
                         message: '获取数据失败',

@@ -153,7 +153,6 @@
                         roleDesc: this.roleForm.roleDesc || ''
                     }
                 })
-                console.log(res.data.meta.status);
                 if (res.data.meta.status === 201) {
                     this.$message({
                         message: '添加角色成功',
@@ -278,7 +277,6 @@
                     type: 'warning'
                 }).then(() => {
                     this._deleteRight(role, rightId).then(res => {
-                        console.log(role);
                         role.children = res.data.data
                     })
                     this.$message({

@@ -225,7 +225,6 @@
                     method: 'post',
                     data: this.ruleForm
                 })
-                console.log(res);
                 if (res.data.meta.status !== 201) {
 
                     this.$message({
@@ -305,7 +304,6 @@
                     url: `users/${userInfo.id}/state/${userInfo.mg_state}`,
                     method: 'put'
                 }).then(res => {
-                    console.log(res);
                     if (res.data.meta.status !== 200) {
                         userInfo.mg_state = !userInfo.mg_state
                         this.$message({
