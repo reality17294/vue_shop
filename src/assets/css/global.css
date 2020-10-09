@@ -8,5 +8,9 @@ body,
 }
 
 .el-main {
-    line-height: 0 !important;
+    line-height: 0px !important;
+}
+
+.box-card {
+    margin-top: 20px;
 }

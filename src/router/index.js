@@ -11,25 +11,29 @@ const routes = [{
     path: '/home',
     name: 'home',
     redirect: '/welcome',
-    component: () => import('../views/home/home.vue'),
+    component: () => import('../views/home/Home'),
     children: [{
       path: '/welcome',
       name: 'welcome',
-      component: () => import('../views/home/cComponents/Welcome.vue')
+      component: () => import('../views/users/Welcome')
     }, {
       path: '/users',
       name: 'users',
-      component: () => import('../views/home/cComponents/Users.vue')
+      component: () => import('../views/users/Users')
     }, {
       path: '/roles',
       name: 'roles',
-      component: () => import('../views/home/cComponents/Roles.vue')
+      component: () => import('../views/rights/Roles')
+    }, {
+      path: '/rights',
+      name: 'rights',
+      component: () => import('../views/rights/Rights')
     }, ]
   },
   {
     path: '/login',
     name: 'login',
-    component: () => import('../views/login.vue')
+    component: () => import('../views/Login')
   }
 
 ]
